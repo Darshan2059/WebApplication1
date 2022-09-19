@@ -20,9 +20,9 @@ namespace MvcMovie.Controllers
 
         //Requires using System.Text.Encoding.Web;
 
-        public IActionResult Welcome(string name, int numTimes = 1)
+        public IActionResult Welcome(string name, int numTimes)
         {
-            ViewData["Message"] = "Hello " + name;
+            ViewData["Message"] = "Hello " + name ;
             ViewData["NumTimes"] = numTimes;
 
             return View();
