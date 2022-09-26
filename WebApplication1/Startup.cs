@@ -12,6 +12,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using WebApplication1.Data;
+using MvcMovie.Data;
+using Microsoft.EntityFrameworkCore;
 
 namespace WebApplication1
 {
@@ -34,6 +36,9 @@ namespace WebApplication1
                 .AddEntityFrameworkStores<ApplicationDbContext>();
             services.AddControllersWithViews();
             services.AddRazorPages();
+
+            services.AddDbContext<MvcMovieContext>(options =>
+                    options.UseSqlServer(Configuration.GetConnectionString("MvcMovieContext")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
